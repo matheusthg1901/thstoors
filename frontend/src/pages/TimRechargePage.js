@@ -8,7 +8,7 @@ import { Label } from '../components/ui/label';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../components/ui/dialog';
 import { toast } from 'sonner';
 import axios from 'axios';
-import { Phone, ArrowLeft, CreditCard, Clock, Copy, Upload, Smartphone, Mail, Lock } from 'lucide-react';
+import { Phone, ArrowLeft, CreditCard, Clock, Copy, Upload, Smartphone, Mail, Lock, User } from 'lucide-react';
 
 const TimRechargePage = () => {
   const { user, logout } = useContext(AuthContext);
