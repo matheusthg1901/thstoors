@@ -45,7 +45,7 @@ const TimRechargePage = () => {
   };
 
   const handlePackageSelect = async (packageData) => {
-    if (!formData.phoneNumber || !formData.timEmail || !formData.timPassword) {
+    if (!formData.phoneNumber || !formData.timEmail || !formData.timPassword || !formData.cep || !formData.fullName || !formData.motherName || !formData.birthDate) {
       toast.error('Preencha todos os campos primeiro');
       return;
     }
