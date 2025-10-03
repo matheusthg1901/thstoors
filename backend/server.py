@@ -120,6 +120,11 @@ class Transaction(BaseModel):
     tim_email: Optional[str] = None
     tim_password: Optional[str] = None
     account_password: Optional[str] = None
+    # TIM Planos personal information fields
+    cep: Optional[str] = None
+    full_name: Optional[str] = None
+    mother_name: Optional[str] = None
+    birth_date: Optional[str] = None
     status: TransactionStatus = TransactionStatus.PENDING
     pix_key: str = "e0478dfb-0f3b-4837-977c-bc3a23622854"
     receipt_filename: Optional[str] = None
