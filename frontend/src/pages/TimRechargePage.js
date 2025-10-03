@@ -341,49 +341,6 @@ const TimRechargePage = () => {
           </Card>
         </div>
 
-          {/* Package Selection */}
-          <Card className="glass-strong border-0 text-white">
-            <CardHeader>
-              <CardTitle className="flex items-center space-x-2">
-                <CreditCard className="w-6 h-6 text-blue-400" />
-                <span>Escolha o Pacote</span>
-              </CardTitle>
-              <CardDescription className="text-gray-300">
-                Selecione o valor que deseja recarregar
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                {timPackages.map((pkg, index) => (
-                  <Button
-                    key={index}
-                    onClick={() => handlePackageSelect(pkg)}
-                    className="w-full p-4 h-auto glass hover:bg-white/10 border border-white/10 text-left transition-all"
-                    variant="ghost"
-                    data-testid={`tim-package-${index}`}
-                  >
-                    <div className="flex justify-between items-center w-full">
-                      <div>
-                        <div className="text-lg font-semibold text-white">
-                          Pague R$ {pkg.paid.toFixed(2)}
-                        </div>
-                        <div className="text-sm text-gray-300">
-                          Receba R$ {pkg.received.toFixed(2)}
-                        </div>
-                      </div>
-                      <div className="text-xl font-bold gradient-text">
-                        +{((pkg.received - pkg.paid) / pkg.paid * 100).toFixed(0)}%
-                      </div>
-                    </div>
-                  </Button>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Removed duplicate package section */}
-
         {/* PIX Payment Modal */}
         <Dialog open={showPixModal} onOpenChange={setShowPixModal}>
           <DialogContent className="glass-strong border-0 text-white max-w-md">
