@@ -170,7 +170,7 @@ const HomePage = () => {
             </p>
           </div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 px-4">
             {features.map((feature, index) => (
               <Card key={index} className="glass-strong card-hover border-0 text-white">
                 <CardHeader className="text-center">
