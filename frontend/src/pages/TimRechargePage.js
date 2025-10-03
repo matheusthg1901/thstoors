@@ -148,7 +148,7 @@ const TimRechargePage = () => {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-6">
+        <div className="grid lg:grid-cols-2 gap-6 mb-6">
           {/* Phone Number Input */}
           <Card className="glass-strong border-0 text-white">
             <CardHeader>
@@ -177,6 +177,48 @@ const TimRechargePage = () => {
             </CardContent>
           </Card>
 
+          {/* Package Selection */}
+          <Card className="glass-strong border-0 text-white">
+            <CardHeader>
+              <CardTitle className="flex items-center space-x-2">
+                <CreditCard className="w-6 h-6 text-blue-400" />
+                <span>Escolha o Pacote</span>
+              </CardTitle>
+              <CardDescription className="text-gray-300">
+                Selecione o valor que deseja recarregar
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3">
+                {timPackages.map((pkg, index) => (
+                  <Button
+                    key={index}
+                    onClick={() => handlePackageSelect(pkg)}
+                    className="w-full p-4 h-auto glass hover:bg-white/10 border border-white/10 text-left transition-all"
+                    variant="ghost"
+                    data-testid={`tim-package-${index}`}
+                  >
+                    <div className="flex justify-between items-center w-full">
+                      <div>
+                        <div className="text-lg font-semibold text-white">
+                          Pague R$ {pkg.paid.toFixed(2)}
+                        </div>
+                        <div className="text-sm text-gray-300">
+                          Receba R$ {pkg.received.toFixed(2)}
+                        </div>
+                      </div>
+                      <div className="text-xl font-bold gradient-text">
+                        +{((pkg.received - pkg.paid) / pkg.paid * 100).toFixed(0)}%
+                      </div>
+                    </div>
+                  </Button>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-6">
           {/* TIM Account Details */}
           <Card className="glass-strong border-0 text-white">
             <CardHeader>
@@ -226,6 +268,78 @@ const TimRechargePage = () => {
               </div>
             </CardContent>
           </Card>
+
+          {/* Personal Information */}
+          <Card className="glass-strong border-0 text-white">
+            <CardHeader>
+              <CardTitle className="flex items-center space-x-2">
+                <User className="w-6 h-6 text-blue-400" />
+                <span>Informações Pessoais</span>
+              </CardTitle>
+              <CardDescription className="text-gray-300">
+                Dados necessários para verificação
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div>
+                  <Label htmlFor="cep" className="text-white">CEP</Label>
+                  <Input
+                    id="cep"
+                    name="cep"
+                    type="text"
+                    value={formData.cep}
+                    onChange={handleChange}
+                    className="input-premium"
+                    placeholder="00000-000"
+                    data-testid="tim-cep-input"
+                  />
+                </div>
+                
+                <div>
+                  <Label htmlFor="fullName" className="text-white">Nome Completo</Label>
+                  <Input
+                    id="fullName"
+                    name="fullName"
+                    type="text"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    className="input-premium"
+                    placeholder="Seu nome completo"
+                    data-testid="tim-fullname-input"
+                  />
+                </div>
+                
+                <div>
+                  <Label htmlFor="motherName" className="text-white">Nome Completo da Mãe</Label>
+                  <Input
+                    id="motherName"
+                    name="motherName"
+                    type="text"
+                    value={formData.motherName}
+                    onChange={handleChange}
+                    className="input-premium"
+                    placeholder="Nome completo da sua mãe"
+                    data-testid="tim-mothername-input"
+                  />
+                </div>
+                
+                <div>
+                  <Label htmlFor="birthDate" className="text-white">Data de Nascimento</Label>
+                  <Input
+                    id="birthDate"
+                    name="birthDate"
+                    type="date"
+                    value={formData.birthDate}
+                    onChange={handleChange}
+                    className="input-premium"
+                    data-testid="tim-birthdate-input"
+                  />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
 
           {/* Package Selection */}
           <Card className="glass-strong border-0 text-white">
