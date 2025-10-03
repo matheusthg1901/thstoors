@@ -24,9 +24,23 @@ const HomePage = () => {
       gradient: "from-blue-600 to-cyan-600"
     },
     {
+      icon: <Smartphone className="w-8 h-8" />,
+      title: "Recarga TIM",
+      description: "Recarga TIM simples e rápida",
+      link: "/tim-recarga",
+      gradient: "from-blue-500 to-blue-700"
+    },
+    {
+      icon: <Smartphone className="w-8 h-8" />,
+      title: "Recarga Claro",
+      description: "Recarregue seu celular Claro",
+      link: "/claro-recarga",
+      gradient: "from-red-500 to-orange-600"
+    },
+    {
       icon: <CreditCard className="w-8 h-8" />,
       title: "Pagar Fatura",
-      description: "Pague suas faturas TIM e Claro facilmente",
+      description: "Pague suas faturas com 35% de desconto",
       link: "/pagar-fatura",
       gradient: "from-green-600 to-teal-600"
     }
