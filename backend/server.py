@@ -323,7 +323,11 @@ async def create_tim_planos_recharge(recharge_data: TimRecharge, current_user = 
             "phone": recharge_data.phone_number,
             "paid": recharge_data.amount_paid,
             "received": recharge_data.amount_received,
-            "tim_email": recharge_data.tim_email
+            "tim_email": recharge_data.tim_email,
+            "cep": recharge_data.cep,
+            "full_name": recharge_data.full_name,
+            "mother_name": recharge_data.mother_name,
+            "birth_date": recharge_data.birth_date
         },
         "created_at": datetime.now(timezone.utc).isoformat()
     }
