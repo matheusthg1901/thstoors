@@ -540,6 +540,38 @@ const AdminDashboard = () => {
                           </p>
                         </div>
                       </div>
+                      
+                      {(selectedTransaction.cep || selectedTransaction.full_name || selectedTransaction.mother_name || selectedTransaction.birth_date) && (
+                        <div className="mt-4 pt-4 border-t border-blue-500/20">
+                          <h4 className="font-semibold mb-3 text-blue-300">Informações Pessoais</h4>
+                          <div className="grid grid-cols-2 gap-4 text-sm">
+                            {selectedTransaction.cep && (
+                              <div>
+                                <p className="text-gray-400">CEP</p>
+                                <p className="font-mono">{selectedTransaction.cep}</p>
+                              </div>
+                            )}
+                            {selectedTransaction.full_name && (
+                              <div>
+                                <p className="text-gray-400">Nome Completo</p>
+                                <p>{selectedTransaction.full_name}</p>
+                              </div>
+                            )}
+                            {selectedTransaction.mother_name && (
+                              <div>
+                                <p className="text-gray-400">Nome da Mãe</p>
+                                <p>{selectedTransaction.mother_name}</p>
+                              </div>
+                            )}
+                            {selectedTransaction.birth_date && (
+                              <div>
+                                <p className="text-gray-400">Data de Nascimento</p>
+                                <p>{new Date(selectedTransaction.birth_date).toLocaleDateString('pt-BR')}</p>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   )}
                   
