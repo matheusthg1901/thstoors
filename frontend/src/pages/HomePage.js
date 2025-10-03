@@ -166,7 +166,7 @@ const HomePage = () => {
               Nossos Serviços
             </h3>
             <p className="text-xl text-gray-300">
-              Escolha o serviço que precisa e recarregue com facilidade
+              Todos os serviços de recarga em um só lugar - Vivo, TIM, Claro e faturas
             </p>
           </div>
           
