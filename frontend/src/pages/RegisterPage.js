@@ -147,17 +147,17 @@ const RegisterPage = () => {
               <div className="space-y-2">
                 <Label htmlFor="account_number" className="text-white flex items-center space-x-2">
                   <Phone className="w-4 h-4" />
-                  <span>Número de Registro da Conta</span>
+                  <span>Telefone de Contato</span>
                 </Label>
                 <Input
                   id="account_number"
                   name="account_number"
-                  type="text"
+                  type="tel"
                   value={formData.account_number}
                   onChange={handleChange}
                   required
                   className="input-premium"
-                  placeholder="Ex: ACC123456"
+                  placeholder="(11) 99999-9999"
                   data-testid="register-account-number-input"
                 />
               </div>
