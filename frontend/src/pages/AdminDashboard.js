@@ -493,7 +493,7 @@ const AdminDashboard = () => {
                       <p>{getTransactionTypeLabel(selectedTransaction.transaction_type)}</p>
                     </div>
                     <div>
-                      <p className="text-gray-400 text-sm">Nº Registro da Conta</p>
+                      <p className="text-gray-400 text-sm">Telefone de Contato</p>
                       <p className="font-mono">{transactionUsers[selectedTransaction.id]?.account_number || 'N/A'}</p>
                     </div>
                     <div>
