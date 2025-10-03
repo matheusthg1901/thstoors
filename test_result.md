@@ -111,11 +111,17 @@ backend:
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: true
         agent: "main"
         comment: "Backend API already supports new fields (cep, full_name, mother_name, birth_date) for TIM Planos transactions"
+      - working: false
+        agent: "testing"
+        comment: "Critical issue found: Transaction model missing new personal information fields (cep, full_name, mother_name, birth_date). Fields were stored in database but not returned in API response."
+      - working: true
+        agent: "testing"
+        comment: "Fixed Transaction model by adding missing fields as Optional[str]. All tests now pass: API accepts all required fields, validates missing fields, returns complete data, stores data correctly in MongoDB, and blocks unauthorized access."
 
 frontend:
   - task: "Fix JSX syntax error in TIM Planos page"
