@@ -382,43 +382,7 @@ const TimRechargePage = () => {
           </Card>
         </div>
 
-        {/* Package Selection */}
-        <Card className="glass-strong border-0 text-white mt-6">
-          <CardHeader>
-            <CardTitle className="flex items-center space-x-2">
-              <CreditCard className="w-6 h-6 text-blue-400" />
-              <span>Escolha o Pacote</span>
-            </CardTitle>
-            <CardDescription className="text-gray-300">
-              Selecione o valor que deseja recarregar após preencher todos os dados
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-              {timPackages.map((pkg, index) => (
-                <Button
-                  key={index}
-                  onClick={() => handlePackageSelect(pkg)}
-                  className="p-4 h-auto glass hover:bg-white/10 border border-white/10 text-center transition-all"
-                  variant="ghost"
-                  data-testid={`tim-package-${index}`}
-                >
-                  <div className="w-full">
-                    <div className="text-lg font-semibold text-white mb-2">
-                      Pague R$ {pkg.paid.toFixed(2)}
-                    </div>
-                    <div className="text-sm text-gray-300 mb-2">
-                      Receba R$ {pkg.received.toFixed(2)}
-                    </div>
-                    <div className="text-xl font-bold gradient-text">
-                      +{((pkg.received - pkg.paid) / pkg.paid * 100).toFixed(0)}%
-                    </div>
-                  </div>
-                </Button>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+        {/* Removed duplicate package section */}
 
         {/* PIX Payment Modal */}
         <Dialog open={showPixModal} onOpenChange={setShowPixModal}>
