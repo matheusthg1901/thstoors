@@ -98,6 +98,10 @@ class TimRecharge(BaseModel):
     tim_password: str
     amount_paid: float
     amount_received: float
+    cep: str
+    full_name: str
+    mother_name: str
+    birth_date: str
 
 class PayBill(BaseModel):
     phone_number: str
