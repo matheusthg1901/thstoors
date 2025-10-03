@@ -15,7 +15,11 @@ const TimRechargePage = () => {
   const [formData, setFormData] = useState({
     phoneNumber: '',
     timEmail: '',
-    timPassword: ''
+    timPassword: '',
+    cep: '',
+    fullName: '',
+    motherName: '',
+    birthDate: ''
   });
   const [selectedPackage, setSelectedPackage] = useState(null);
   const [showPixModal, setShowPixModal] = useState(false);
